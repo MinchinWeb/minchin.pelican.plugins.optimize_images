@@ -6,10 +6,7 @@ Optimize Images
 a static site generator written in Python.
 
 ``Optimize Images``  applies lossless compression on JPEG and PNG images, with
-no effect on image quality. It uses [jpegtran][1] and [OptiPNG][2].
-
-[1]: http://jpegclub.org/jpegtran/              "jpegtran"
-[2]: http://optipng.sourceforge.net/            "OptiPNG"
+no effect on image quality. It uses jpegtran_ and OptiPNG_.
 
 
 Installation
@@ -22,7 +19,7 @@ will also install the required Python dependencies automatically (currently none
 
   pip install minchin.pelican.plugins.optimize_images
 
-It is assumed both [jpegtran][1] and [OptiPNG][2] are installed on system path.
+It is assumed both jpegtran_ and OptiPNG_ are installed on system path.
 
 Then, in your ``pelicanconf.py`` file, add ``Optimize Images`` to your list of
 plugins:
@@ -46,7 +43,7 @@ be manually installed with pip:
 
    pip install pelican
 
-It is assumed both [jpegtran][1] and [OptiPNG][2] are installed on system path. On Windows, installers are available at each respective website. On Ubuntu systems, the two can be installed via ``apt-get``.
+It is assumed both jpegtran_ and OptiPNG_ are installed on system path. On Windows, installers are available at each respective website. On Ubuntu systems, the two can be installed via ``apt-get``.
 
 .. code-block:: sh
 
@@ -74,3 +71,7 @@ License
 
 The plugin code is assumed to be under the AGPLv3 license (this is the
 license of the Pelican-Plugins repo).
+
+
+.. _jpegtran: http://jpegclub.org/jpegtran/ 
+.. _OptiPNG: http://optipng.sourceforge.net/
