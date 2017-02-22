@@ -33,7 +33,7 @@ META_PATH = ['minchin', 'pelican', 'plugins', 'optimize_images.py']
 NAME         = find_meta(*META_PATH, meta_key='title').lower()
 VERSION      = find_meta(*META_PATH, meta_key='version')
 SHORT_DESC   = find_meta(*META_PATH, meta_key='description')
-LONG_DESC    = read('Readme.rst')
+LONG_DESC    = read('README.rst')
 AUTHOR       = find_meta(*META_PATH, meta_key='author')
 AUTHOR_EMAIL = find_meta(*META_PATH, meta_key='email')
 URL          = find_meta(*META_PATH, meta_key='url')
@@ -125,7 +125,7 @@ setuptools.setup(
     description=SHORT_DESC,
     long_description=LONG_DESC,
     packages=PACKAGES,
-    package_data={'': ['Readme.rst', 'CHANGELOG.rst', 'LICENSE.txt']},
+    package_data={'': ['README.rst', 'CHANGELOG.rst', 'LICENSE.txt']},
     include_package_data=True,
     install_requires=INSTALL_REQUIRES,
     extras_require=EXTRA_REQUIRES,
