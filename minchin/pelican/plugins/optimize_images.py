@@ -27,6 +27,16 @@ COMMANDS = {
 }
 
 
+# Module Metadata
+__title__ = 'minchin.pelican.plugins.optimize_images'
+__version__ = "1.1.0"
+__description__ = 'This Pelcan plugin optimized images (jpg and png).'
+__author__ = 'William Minchin'
+__email__ = 'w_minchin@hotmail.com'
+__url__ = 'https://github.com/MinchinWeb/minchin.pelican.plugins.optimize_images'
+__license__ = 'GNU Affero General Public License v3'
+
+
 def optimize_images(pelican):
     """
     Optimized jpg and png images
@@ -37,6 +47,7 @@ def optimize_images(pelican):
         for name in filenames:
             if os.path.splitext(name)[1] in COMMANDS.keys():
                 optimize(dirpath, name)
+
 
 def optimize(dirpath, filename):
     """

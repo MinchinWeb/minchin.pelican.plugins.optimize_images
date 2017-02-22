@@ -1,0 +1,15 @@
+releaser:
+  module_name: minchin.pelican.plugins.optimzie_images
+  here: .
+  docs: none
+  test: none
+  source: minchin
+  changelog: CHANGELOG.rst
+  version: minchin\pelican\plugins\optimzie_images.py
+  test_command: none
+  version_bump: none
+  extra_packages:
+    test:
+      - pelican
+    pypi:
+      - python-dateutil
