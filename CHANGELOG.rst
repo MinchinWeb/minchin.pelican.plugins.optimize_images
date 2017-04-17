@@ -3,6 +3,7 @@ Image Process Changelog
 
 This Changelog is for ``minchin.pelican.plugins.optimize_images``.
 
+- :bug:`-` add Pelican trove classifier
 - :release:`1.1.0 <2017-02-22>`
 - :support:`-` first release to PyPI
 - :support:`-` add release machinery

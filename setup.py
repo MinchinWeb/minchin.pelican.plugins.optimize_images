@@ -48,11 +48,11 @@ INSTALL_REQUIRES = [
 EXTRA_REQUIRES = {
     'build': [
         'invoke',
-        'pip',
-        'setuptools>=18.0',
+        # 'pip',
+        # 'setuptools >= 18.0',
         'twine',
         'wheel',
-        'minchin.releaser>=0.3.1'
+        'minchin.releaser >= 0.3.1'
     ],
     'docs': [
         # 'sphinx >= 1.4',  # theme requires at least 1.4
@@ -98,8 +98,9 @@ CLASSIFIERS = [
     'Programming Language :: Python :: 3.6',
     # 'Programming Language :: Python :: 3 :: Only',
 
-    'Natural Language :: English',
+    'Framework :: Pelican :: Plugins',
     'Intended Audience :: Developers',
+    'Natural Language :: English',
     'Operating System :: OS Independent',
     'Topic :: Software Development :: Libraries :: Python Modules',
 ]
