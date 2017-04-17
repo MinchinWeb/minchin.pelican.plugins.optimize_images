@@ -29,7 +29,7 @@ COMMANDS = {
 
 # Module Metadata
 __title__ = 'minchin.pelican.plugins.optimize_images'
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 __description__ = 'This Pelcan plugin optimized images (jpg and png).'
 __author__ = 'William Minchin'
 __email__ = 'w_minchin@hotmail.com'
