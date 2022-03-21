@@ -13,6 +13,10 @@ with no effect on image quality. It uses jpegtran_ and OptiPNG_.
     :target: https://pypi.python.org/pypi/minchin.pelican.plugins.optimize-images/
     :alt: PyPI version number
 
+.. image:: https://img.shields.io/badge/-Changelog-success
+   :target: https://github.com/MinchinWeb/minchin.pelican.plugins.optimize_images/blob/master/CHANGELOG.rst
+   :alt: Changelog
+
 .. image:: https://img.shields.io/pypi/pyversions/minchin.pelican.plugins.optimize-images?style=flat
     :target: https://pypi.python.org/pypi/minchin.pelican.plugins.optimize-images/
     :alt: Supported Python version
