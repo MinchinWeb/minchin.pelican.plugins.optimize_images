@@ -13,20 +13,17 @@ with no effect on image quality. It uses jpegtran_ and OptiPNG_.
     :target: https://pypi.python.org/pypi/minchin.pelican.plugins.optimize-images/
     :alt: PyPI version number
 
-.. image:: https://img.shields.io/pypi/dm/minchin.pelican.plugins.optimize-images.svg?style=flat
+.. image:: https://img.shields.io/pypi/pyversions/minchin.pelican.plugins.optimize-images?style=flat
     :target: https://pypi.python.org/pypi/minchin.pelican.plugins.optimize-images/
-    :alt: Download Count
+    :alt: Supported Python version
 
 .. image:: https://img.shields.io/pypi/l/minchin.pelican.plugins.optimize-images.svg?style=flat&color=green
     :target: https://github.com/MinchinWeb/minchin.pelican.plugins.optimize-images/blob/master/LICENSE
     :alt: License
 
-.. image:: https://img.shields.io/pypi/pyversions/minchin.pelican.plugins.optimize-images?style=flat
+.. image:: https://img.shields.io/pypi/dm/minchin.pelican.plugins.optimize-images.svg?style=flat
     :target: https://pypi.python.org/pypi/minchin.pelican.plugins.optimize-images/
-    :alt: Supported Python version
-
-.. image:: https://img.shields.io/tokei/lines/github/MinchinWeb/minchin.pelican.plugins.optimize_images.svg?style=flat
-    :alt: Lines of Code
+    :alt: Download Count
 
 
 Installation
