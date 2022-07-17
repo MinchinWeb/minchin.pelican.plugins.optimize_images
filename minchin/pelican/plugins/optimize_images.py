@@ -2,7 +2,7 @@
 
 """
 Optimized images (jpg and png)
-Assumes that jpegtran and optipng are isntalled on path.
+Assumes that jpegtran and optipng are installed on path.
 http://jpegclub.org/jpegtran/
 http://optipng.sourceforge.net/
 Copyright (c) 2012 Irfan Ahmad (http://i.com.pk)
@@ -30,7 +30,7 @@ COMMANDS = {
 # Module Metadata
 __title__ = 'minchin.pelican.plugins.optimize_images'
 __version__ = "1.1.1"
-__description__ = 'This Pelcan plugin optimized images (jpg and png).'
+__description__ = 'This Pelican plugin optimizes images (jpg and png).'
 __author__ = 'William Minchin'
 __email__ = 'w_minchin@hotmail.com'
 __url__ = 'https://github.com/MinchinWeb/minchin.pelican.plugins.optimize_images'
@@ -54,7 +54,7 @@ def optimize(dirpath, filename):
     Check if the name is a type of file that should be optimized.
     And optimizes it if required.
 
-    :param dirpath: Path of the file to be optimzed
+    :param dirpath: Path of the file to be optimized
     :param name: A file name to be optimized
     """
     filepath = os.path.join(dirpath, filename)
