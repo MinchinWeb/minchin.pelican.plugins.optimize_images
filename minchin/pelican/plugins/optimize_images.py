@@ -6,6 +6,7 @@ Assumes that jpegtran and optipng are installed on path.
 http://jpegclub.org/jpegtran/
 http://optipng.sourceforge.net/
 Copyright (c) 2012 Irfan Ahmad (http://i.com.pk)
+Copyright (c) 2017, 2022 Wm. Minchin
 """
 
 import logging
@@ -22,19 +23,23 @@ SHOW_OUTPUT = logger.getEffectiveLevel() <= logging.DEBUG
 # A list of file types with their respective commands
 COMMANDS = {
     # '.ext': ('command {flags} {filename', 'silent_flag', 'verbose_flag')
-    '.jpg': ('jpegtran {flags} -copy none -optimize -outfile "{filename}" "{filename}"', '', '-v'),
-    '.png': ('optipng {flags} "{filename}"', '--quiet', ''),
+    ".jpg": (
+        'jpegtran {flags} -copy none -optimize -outfile "{filename}" "{filename}"',
+        "",
+        "-v",
+    ),
+    ".png": ('optipng {flags} "{filename}"', "--quiet", ""),
 }
 
 
 # Module Metadata
-__title__ = 'minchin.pelican.plugins.optimize_images'
 __version__ = "1.1.2.dev.0"
-__description__ = 'This Pelican plugin optimizes images (jpg and png).'
-__author__ = 'William Minchin'
-__email__ = 'w_minchin@hotmail.com'
-__url__ = 'https://github.com/MinchinWeb/minchin.pelican.plugins.optimize_images'
-__license__ = 'GNU Affero General Public License v3'
+__title__ = "minchin.pelican.plugins.optimize_images"
+__description__ = "This Pelican plugin optimizes images (jpg and png)."
+__author__ = "William Minchin"
+__email__ = "w_minchin@hotmail.com"
+__url__ = "https://github.com/MinchinWeb/minchin.pelican.plugins.optimize_images"
+__license__ = "GNU Affero General Public License v3"
 
 
 LOG_PREFIX = "[Optimize Images]"
@@ -47,7 +52,7 @@ def optimize_images(pelican):
     :param pelican: The Pelican instance
     """
     if dev_mode_active(pelican):
-        for dirpath, _, filenames in os.walk(pelican.settings['OUTPUT_PATH']):
+        for dirpath, _, filenames in os.walk(pelican.settings["OUTPUT_PATH"]):
             for name in filenames:
                 if os.path.splitext(name)[1] in COMMANDS.keys():
                     optimize(dirpath, name)
@@ -62,7 +67,7 @@ def optimize(dirpath, filename):
     :param name: A file name to be optimized
     """
     filepath = os.path.join(dirpath, filename)
-    logger.info('%s optimizing %s', (LOG_PREFIX, filepath))
+    logger.info("%s optimizing %s", (LOG_PREFIX, filepath))
 
     ext = os.path.splitext(filename)[1]
     command, silent, verbose = COMMANDS[ext]
@@ -94,6 +99,7 @@ def dev_mode_active(pelican):
 
 # def check_settings(pelican):
 #     pass
+
 
 def register():
     signals.finalized.connect(optimize_images)
