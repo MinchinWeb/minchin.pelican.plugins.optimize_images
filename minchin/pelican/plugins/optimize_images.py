@@ -29,12 +29,15 @@ COMMANDS = {
 
 # Module Metadata
 __title__ = 'minchin.pelican.plugins.optimize_images'
-__version__ = "1.1.1"
+__version__ = "1.1.2.dev.0"
 __description__ = 'This Pelican plugin optimizes images (jpg and png).'
 __author__ = 'William Minchin'
 __email__ = 'w_minchin@hotmail.com'
 __url__ = 'https://github.com/MinchinWeb/minchin.pelican.plugins.optimize_images'
 __license__ = 'GNU Affero General Public License v3'
+
+
+LOG_PREFIX = "[Optimize Images]"
 
 
 def optimize_images(pelican):
@@ -43,10 +46,11 @@ def optimize_images(pelican):
 
     :param pelican: The Pelican instance
     """
-    for dirpath, _, filenames in os.walk(pelican.settings['OUTPUT_PATH']):
-        for name in filenames:
-            if os.path.splitext(name)[1] in COMMANDS.keys():
-                optimize(dirpath, name)
+    if dev_mode_active(pelican):
+        for dirpath, _, filenames in os.walk(pelican.settings['OUTPUT_PATH']):
+            for name in filenames:
+                if os.path.splitext(name)[1] in COMMANDS.keys():
+                    optimize(dirpath, name)
 
 
 def optimize(dirpath, filename):
@@ -58,7 +62,7 @@ def optimize(dirpath, filename):
     :param name: A file name to be optimized
     """
     filepath = os.path.join(dirpath, filename)
-    logger.info('optimizing %s', filepath)
+    logger.info('%s optimizing %s', (LOG_PREFIX, filepath))
 
     ext = os.path.splitext(filename)[1]
     command, silent, verbose = COMMANDS[ext]
@@ -67,5 +71,30 @@ def optimize(dirpath, filename):
     call(command, shell=True)
 
 
+def dev_mode_active(pelican):
+    """
+    Check if Development Mode is active.
+
+    In this mode, no images are actually optimized. Useful for speeding up
+    interations when working on your blog locally.
+    """
+    if (
+        "OPTIMIZE_IMAGES_DEV_MODE" in pelican.settings.keys()
+        and pelican.settings["OPTIMIZE_IMAGES_DEV_MODE"]
+    ):
+        logger.warning(
+            "%s Development Mode is active. Optimize Images plugin has been disabled.",
+            LOG_PREFIX,
+        )
+        return True
+    else:
+        pelican.settings["OPTIMIZE_IMAGES_DEV_MODE"] = False
+        return False
+
+
+# def check_settings(pelican):
+#     pass
+
 def register():
     signals.finalized.connect(optimize_images)
+    # signals.initialized.connect(check_settings)
