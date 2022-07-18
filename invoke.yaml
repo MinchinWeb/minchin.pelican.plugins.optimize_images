@@ -11,5 +11,6 @@ releaser:
   extra_packages:
     test:
       - pelican
+      - minchin.pelican.plugins.autoloader
     pypi:
       - python-dateutil

@@ -33,8 +33,8 @@ COMMANDS = {
 
 
 # Module Metadata
-__version__ = "1.1.2.dev.0"
 __title__ = "minchin.pelican.plugins.optimize_images"
+__version__ = "1.2.0"
 __description__ = "This Pelican plugin optimizes images (jpg and png)."
 __author__ = "William Minchin"
 __email__ = "w_minchin@hotmail.com"

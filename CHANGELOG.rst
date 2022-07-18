@@ -3,6 +3,9 @@ Image Process Changelog
 
 This Changelog is for ``minchin.pelican.plugins.optimize_images``.
 
+- :release:`1.2.0 <2022-07-18>`
+- :feature:`3` add development mode
+- :support:`2` add autoloader to requirements 
 - :release:`1.1.1 <2017-04-17>`
 - :bug:`-` add Pelican trove classifier
 - :release:`1.1.0 <2017-02-22>`
