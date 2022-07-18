@@ -52,6 +52,8 @@ def optimize_images(pelican):
     :param pelican: The Pelican instance
     """
     if dev_mode_active(pelican):
+        pass
+    else:
         for dirpath, _, filenames in os.walk(pelican.settings["OUTPUT_PATH"]):
             for name in filenames:
                 if os.path.splitext(name)[1] in COMMANDS.keys():

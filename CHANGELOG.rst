@@ -3,6 +3,7 @@ Image Process Changelog
 
 This Changelog is for ``minchin.pelican.plugins.optimize_images``.
 
+- :bug:`-` Make development mode work as expected (on/off was flipped)
 - :release:`1.2.0 <2022-07-18>`
 - :feature:`3` add development mode
 - :support:`2` add autoloader to requirements 
