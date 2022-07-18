@@ -34,8 +34,7 @@ Installation
 ============
 
 The easiest way to install ``Optimize Images`` is through the use of pip.
-This will also install the required Python dependencies automatically
-(currently none beyond Pelican itself).
+This will also install the required Python dependencies automatically.
 
 .. code-block:: sh
 
@@ -43,16 +42,20 @@ This will also install the required Python dependencies automatically
 
 It is assumed both jpegtran_ and OptiPNG_ are installed on system path.
 
-Then, in your ``pelicanconf.py`` file, add ``Optimize Images`` to your list
-of plugins:
+If you are using Pelican 4.5, it should automatically be activated (through my
+AutoLoader plugin). 
+
+If you are using an earlier version of Pelican or autoloading isn't working,
+then in your ``pelicanconf.py`` file, add ``Optimize Images`` to your list of
+plugins:
 
 .. code-block:: python
 
   PLUGINS = [
-              # ...
-              'minchin.pelican.plugins.optimize_images',
-              # ...
-            ]
+      # others...
+      "minchin.pelican.plugins.optimize_images",
+      # ...
+  ]
 
 
 Requirements
@@ -67,7 +70,7 @@ This can be manually installed with pip:
 
 It is assumed both jpegtran_ and OptiPNG_ are installed on system path. On
 Windows, installers are available at each respective website. On Ubuntu
-systems (including Travis-CI), the two can be installed via ``apt-get``:
+systems, the two can be installed via ``apt-get``:
 
 .. code-block:: sh
 
@@ -80,15 +83,17 @@ Configuration and Usage
 The plugin will activate and optimize images upon ``finalized`` signal of
 pelican.
 
-The plugin has no user settings.
+If add ``OPTIMIZE_IMAGES_DEV_MODE = True`` to your ``pelicanconf.py``, this
+will disable the plugin, which is useful when developing your site locally.
 
 
 Known Issues
 ============
 
-Image manipulation like this can take some time to run. You may consider
-only adding this plugin to your ``publishconf.py`` (rather than your base
-``pelicanconf.py``), which will then only run this image optimization in
+Image manipulation like this can take some time to run. You may consider only
+adding this plugin to your ``publishconf.py`` (rather than your base
+``pelicanconf.py``) or add ``OPTIMIZE_IMAGES_DEV_MODE = True`` to your
+``pelicanconf.py``, which will then only run this image optimization in
 preparation for site publication.
 
 An issue, as such, is that there is no formal test suite. Testing is
@@ -96,8 +101,9 @@ currently limited to my in-use observations. I also run a basic check upon
 uploaded the package to PyPI that it can be downloaded and loaded into
 Python.
 
-The package is tested in Python 3.6; compatibility with other version of
-Python is unknown, but there should be nothing particular keeping it from working with other "modern" versions of Python.
+The package is tested in Python 3.10; compatibility with other version of
+Python is unknown, but there should be nothing particular keeping it from
+working with other "modern" versions of Python.
 
 
 Credits
