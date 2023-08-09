@@ -11,6 +11,8 @@ releaser:
   extra_packages:
     test:
       - pelican
-      - minchin.pelican.plugins.autoloader
+      - semantic-version
+      - setuptools
+      - wheel
     pypi:
-      - python-dateutil
+      # - python-dateutil
